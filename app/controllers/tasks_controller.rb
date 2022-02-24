@@ -7,6 +7,7 @@ class TasksController < ApplicationController
   def create
     if @current_user
       @task = Task.new(params["task"])
+      @task.user_id = @current_user.id
       @task.save
     end
     
